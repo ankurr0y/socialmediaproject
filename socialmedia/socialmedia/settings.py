@@ -122,6 +122,7 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
 os.path.join(BASE_DIR, "static"),
 ]
@@ -150,3 +151,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail',
                                         args=[u.username])}
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = "ankurroy622@gmail.com"
+# EMAIL_HOST_PASSWORD = 'blu789*"'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False

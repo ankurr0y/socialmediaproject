@@ -58,7 +58,7 @@ def register(request):
             # Save the User object
             new_user.save()
             p = Profile(user=User.objects.get(username=user_form.cleaned_data['username']))
-            create_action(new_user, 'has created an account')
+            create_action(user=User.objects.get(username=user_form.cleaned_data['username']), verb='has created an account')
             p.save()
             return render(request, 'account/register_done.html', {'new_user': new_user})
     else:
@@ -70,7 +70,7 @@ def register(request):
 def edit(request):
     if request.method == 'POST':
         user_form = UserEditForm(instance=request.user,data=request.POST)
-        profile_form = ProfileEditForm(instance=request.user.profile,data=request.POST,files=request.FILES)
+        profile_form = ProfileEditForm(instance=request.user.profile, data=request.POST,files=request.FILES)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()

@@ -4,6 +4,7 @@ body {
     margin:0;
     padding:0;
     font-family:helvetica, sans-serif;
+    background-color:#848482;
 }
 
 p {
@@ -22,13 +23,13 @@ a:hover {
 h1, h2, h3, h4, h5 , h6 { font-family: 'Muli', sans-serif; font-weight:normal; }
 
 h1 {
-    border-bottom:1px solid #bbb;
-    padding:0 0 10px 0;
-    margin:10px 0 20px 0;
+    border-bottom:0.0625rem solid #bbb;
+    padding:0 0 0.625rem 0;
+    margin:0.625rem 0 1.25rem 0;
 }
 
 h2 {
-    margin:30px 0 20px;
+    margin:1.875rem 0 1.25rem;
 }
 
 ol {
@@ -36,11 +37,11 @@ ol {
 }
 
 #header {
-    padding:10px 100px;
-    font-size:14px;
-    background:#12c064;
-    color:#fff;
-    border-bottom:4px solid #1cdf78;
+    padding:0.625rem 6.25rem;
+    font-size:0.875rem;
+    background:#00cccc;
+    color:#aaa;
+    border-bottom:0.25rem solid #1cdf78;
     overflow:auto;
 }
 
@@ -48,7 +49,7 @@ ol {
     font-family: 'Muli', sans-serif;
     float:left;
     color:#f3f7cc;
-    font-size:20px;
+    font-size:1.25rem;
     margin-right:10%;
 }
 
@@ -60,7 +61,7 @@ ol {
 }
 #header ul.menu li {
     float:left;
-    padding:4px 10px;
+    padding:0.25rem 0.625rem;
 }
 
 #header ul.menu li.selected a, #header ul.menu li.selected a:hover {
@@ -77,11 +78,13 @@ ol {
 
 #header .user {
     float:right;
-    padding-top:4px;
+    padding-top:0.25rem;
+    font-weight:bold;
+    color:#fedf00;
 }
 
 #content {
-    padding:30px 100px;
+    padding:1.875rem 6.25rem;
 }
 
 /* forms */
@@ -90,7 +93,7 @@ form {
 }
 
 form p {
-    width:100%;
+    width:auto;
     overflow:auto;
 }
 
@@ -98,41 +101,41 @@ label {
     float:left;
     clear:both;
     color:#333;
-    margin-bottom:4px;
+    margin-bottom:0.25rem;
 }
 input, textarea {
     clear:both;
     float:left;
-    margin:0 0 10px;
-    background:#efefef;
+    margin:0 0 0.625rem;
+    background:orange;
     border:0;
-    padding:6px 10px;
-    font-size:14px;
+    padding:0.375rem 0.625rem;
+    font-size:0.875rem;
 }
 input[type=submit], a.button {
     font-weight:bold;
-    background:#12c064;
+    background:orange;
     color:#fff;
-    padding:10px 20px;
-    font-size:14px;
+    padding:0.625rem 1.25rem;
+    font-size:0.875rem;
     text-transform:uppercase;
 }
 .errorlist {
     color:#cc0033;
     float:left;
     clear:both;
-    padding-left:10px;
+    padding-left:0.625rem;
 }
 .helptext {
-    margin:0 0 20px 0;
+    margin:0 0 1.25rem 0;
     color:#aaa;
     clear:both;
     float:left;
-    font-size:13px;
+    font-size:0.8175rem;
 }
 /* messages */
 ul.messages {
-    margin:10px 100px;
+    margin:0.625rem 6.25rem;
     padding:0;
     list-style-type:
     none;
@@ -142,7 +145,7 @@ ul.messages li.warning,
 ul.messages li.error,
 ul.messages li.info {
     margin:0;
-    padding:14px 20px;
+    padding:0.875rem 1.25rem;
     list-style:none;
     color:#fff;
 }
@@ -178,12 +181,12 @@ ul.messages li a.close {
 }
 .social li {
     list-style:none;
-    padding:10px 20px;
-    margin:0 0 10px 0;
+    padding:0.625rem 1.25rem;
+    margin:0 0 0.625rem 0;
 }
 .social li a {
-    width:100%;
-    height:100%;
+    width:auto;
+    height:auto;
     display:block;
     color:#fff;
 }
@@ -195,60 +198,60 @@ ul.messages li a.close {
 /* images */
 
 .image-preview, .image-detail {
-    max-width:300px;
+    max-width:18.75rem;
     float:left;
-    margin:0 20px 20px 0;
+    margin:0 1.25rem 1.25rem 0;
 }
-.image-detail { margin-top:20px; }
+.image-detail { margin-top:1.25rem; }
 .image-info div {
-    padding:20px 0;
+    padding:1.25rem 0;
     overflow:auto;
 }
 .count {
     color:#aaa;
-    border:3px solid #bbb;
+    border:0.1875rem solid #bbb;
     border-radius:26px;
-    padding:10px 20px;
-    margin:20px 10px 0;
+    padding:0.625rem 1.25rem;
+    margin:1.25rem 0.625rem 0;
 }
 a.like, a.follow { float:right; margin-top:-8px; }
 
 #image-list { overflow:auto; }
 #image-list .image {
     float:left;
-    width:220px;
-    height:300px;
-    margin:0 10px 10px 10px;
-    border-top:8px solid #12c064;
+    width:auto;
+    height:auto;
+    margin:0 0.625rem 0.625rem 0.625rem;
+    border-top:0.5rem solid #12c064;
     background:#eee;
 }
-#image-list img { width:220px; height:220px; }
-#image-list .info { padding:10px; }
+#image-list img { width:21.25rem; height:21.25rem; }
+#image-list .info { padding:0.625rem; }
 #image-list .info a { color:#333; }
 .image-likes div {
     float:left;
     width:auto;
-    padding:10px;
+    padding:0.625rem;
     text-align:center;
 }
 .image-likes img {
-    width:120px;
-    height:120px;
+    width:13.75rem;
+    height:13.75rem;
     border-radius:50%;
 }
 
 /* users */
 #people-list img {
-    width:180px;
-    height:180px;
+    width:11.25rem;
+    height:11.25rem;
     border-radius:50%;
-    margin-bottom:20px;
+    margin-bottom:1.25rem;
 }
 #people-list .user {
-    width:180px;
+    width:11.25rem;
     float:left;
     overflow:auto;
-    padding:10px;
+    padding:0.625rem;
 }
 #people-list .info { text-align:center; }
 img.user-detail {
@@ -258,9 +261,9 @@ img.user-detail {
 .profile-info {
     float:left;
     overflow:auto;
-    margin-right:20px;
+    margin-right:1.25rem;
 }
-.image-container { margin-top:40px; }
+.image-container { margin-top:2.5rem; }
 
 /* actions */
 .action {
@@ -269,7 +272,7 @@ img.user-detail {
 }
 .action .images {
     float:left;
-    margin:0 10px 10px 0;
+    margin:0 0.625rem 0.625rem 0;
 }
 .action .date {
     font-style:italic;
