@@ -10,6 +10,7 @@ from .common.decorators import ajax_required
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from actions.utils import create_action
 
 
 # Create your views here.
@@ -24,6 +25,7 @@ def image_create(request):
             new_item.user = request.user
             new_item.save()
             messages.success(request, 'Image added success')
+            create_action(user=User.objects.get(username=request.user), verb='posted a new image')
             return redirect(new_item.get_absolute_url())
     else:
         form = ImageCreateForm(data=request.GET)
@@ -55,7 +57,7 @@ def image_like(request):
             return JsonResponse({'status': 'ok'})
 
         except:
-            pass
+            print('exception')
     return JsonResponse({'status': 'error'})
 
 

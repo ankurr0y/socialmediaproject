@@ -13,16 +13,13 @@
       <span class="total">{{ total_likes }}</span>
       like{{ total_likes|pluralize }}
     </span>
-    <a href="#" data-id="{{ image.id }}" data-action=" {% if request.user in users_like %} unlike {%else%} like {% endif %}" class="like button">
-      {% if request.user in users_like %}
-      unlike
-      {% else %}
-      like
-      {% endif %}
+    <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}unlike{%else%}like{% endif %}" class="like button">
+      {% if request.user in users_like %}unlike{% else %}like{% endif %}
     </a>
   </div>
   {{ image.description|linebreaks }}
 </div>
+<h1>Liked By:
 <div class="image-likes">
   {% for user in users_like %}
   <div>
@@ -32,7 +29,7 @@
   {% empty %}
   Nobody likes this image yet.
   {% endfor %}
-</div>
+</div></h1>
 {% endwith %}
 {% endblock %}
 {% block domready %}
@@ -48,19 +45,20 @@ $('a.like').click(function(e){
       {
         var previous_action = $('a.like').data('action');
         previous_action = previous_action.replace(/\s/g, '');
-<!--        $('a.like').data('action', previous_action == 'like' ? 'unlike': 'like');-->
+        $('a.like').text(previous_action == 'like' ? 'unlike': 'like');
+        $('a.like').data('action', previous_action == 'like' ? 'unlike': 'like');
 <!--        $('a.like').data('action', previous_action == 'unlike' ? 'like': 'unlike');-->
-        if (previous_action=='like')
-        {
-          $('a.like').data('action', 'unlike');
-          $('a.like').text('unlike');
-        }
-        else
-        {
-          $('a.like').data('action', 'like');
-          $('a.like').text('like');
-        }
-<!--        $('a.like').text(previous_action == 'like' ? 'unlike': 'like');-->
+<!--        if (previous_action=='like')-->
+<!--        {-->
+<!--          $('a.like').data('action', 'unlike');-->
+<!--          $('a.like').text('unlike');-->
+<!--        }-->
+<!--        else-->
+<!--        {-->
+<!--          $('a.like').data('action', 'like');-->
+<!--          $('a.like').text('like');-->
+<!--        }-->
+
 <!--        $('a.like').text(previous_action == 'unlike' ? 'like': 'unlike');-->
         var previous_likes = parseInt($('span.count .total').text());
 
