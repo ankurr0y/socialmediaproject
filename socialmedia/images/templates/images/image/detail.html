@@ -22,10 +22,17 @@
 <h1>Liked By:
 <div class="image-likes">
   {% for user in users_like %}
+  {%if user.profile.photo.url != None%}
   <div>
-    <img src="{{ user.profile.photo.url }}">
+    <img src="{{user.profile.photo.url}}">
     <p>{{ user.first_name }}</p>
   </div>
+  {% else %}
+  <div>
+    <img src="">
+    <p>{{ user.first_name }}</p>
+  </div>
+  {% endif %}
   {% empty %}
   Nobody likes this image yet.
   {% endfor %}

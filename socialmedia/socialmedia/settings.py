@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
-
+HOSTNAME = 'localhost:8000'
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,6 +87,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'socialmedia',  # dbname
+#             'USER': 'localhost',  # master username
+#             'PASSWORD': 'localhost',  # master password
+#             'HOST': 'localhost',  # Endpoint
+#             'PORT': '3306',
+#         },
+# }
 
 
 # Password validation

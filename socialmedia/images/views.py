@@ -35,10 +35,17 @@ def image_create(request):
 @login_required
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
-    return render(request,
+
+    if image:
+        return render(request,
                   'images/image/detail.html',
                   {'section': 'images',
                    'image': image})
+    else:
+        return render(request,
+                      'images/image/detail.html',
+                      {'section': 'images',
+                       'image': image})
 
 
 @ajax_required
